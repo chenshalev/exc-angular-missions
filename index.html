@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="todosApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 
     <script src="app/app.js"></script>
-    <script src="app/todos/todosCtrl.js"></script>
     <!--
     <link rel="stylesheet" href="css/style.css">
     <script src="app/model/cars.js"></script>
@@ -22,14 +21,15 @@
     -->
     <title>Document</title>
 </head>
-<body ng-app="todosApp" ng-controller="TestCtrl">
+<body >
 
     <div class="container">
         <div class="jumbotron text-center ">
-            <h1>Todo list application</h1>
+            <h1>Todo list application</h1>        
             <form>
                 <input type="text" ng-model="todo" placeholder="what's next?">
               </form>
+            {{todo}}
                  
         </div>
     
