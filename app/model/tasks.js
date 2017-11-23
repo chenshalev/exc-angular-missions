@@ -10,10 +10,7 @@ todosApp.factory("tasks", function() {
     function addTask(task) {
         tasks.push(task);
     }
-    function settasks() {
-        tasks = [];
-    }
-
+ 
  
     return {
         getAll: getAll,
