@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="todosApp">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,13 +8,15 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 
     <script src="app/app.js"></script>
+    <script src="app/model/task.js"></script>
+    <script src="app/model/tasks.js"></script>
+    <script src="app/todosCtrl.js"></script>
     <!--
     <link rel="stylesheet" href="css/style.css">
-    <script src="app/model/cars.js"></script>
     <script src="app/gallery/carGalleryCtrl.js"></script>
     <script src="app/details/carDetailsCtrl.js"></script>
     <script src="app/nav/navDirective.js"></script>
@@ -21,18 +24,21 @@
     -->
     <title>Document</title>
 </head>
+
 <body >
 
-    <div class="container">
+    <div class="container" ng-controller="todosCtrl">
         <div class="jumbotron text-center ">
-            <h1>Todo list application</h1>        
-            <form>
-                <input type="text" ng-model="todo" placeholder="what's next?">
-              </form>
-            {{todo}}
-                 
+            <h1>To do list application</h1>
+            <form ng-submit="funcadd()">
+                 <input type="text" ng-model="name" placeholder="what's next?"> 
+            </form>
+            <ul >
+                <li ng-repeat="task in tasks">{{task.name}}</li>
+
         </div>
-    
-    </div>   
+
+    </div>
 </body>
+
 </html>
