@@ -1,3 +1,4 @@
-.red-selected {
-    background-color: gray;
+.taskselected {
+    text-decoration: line-through;
+    background-color:lightgray;
 }

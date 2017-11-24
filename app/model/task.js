@@ -5,7 +5,7 @@ todosApp.factory("Task", function() {
     // Car Constructor
     function Task(name) {
         this.name = name;
-        this.selected = false;
+        this.accomplished = false;
         
         }
     return Task;

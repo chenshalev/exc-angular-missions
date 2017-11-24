@@ -8,9 +8,4 @@ todosApp.controller("todosCtrl", function ($scope,Task,tasks, $log, $http, $loca
         $scope.name="";
      }
 
- $scope.checked=function() {
-    $scope.task.selected=true;
-    console.log($scope.task.selected)
-
- }   
-})
+});

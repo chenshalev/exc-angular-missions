@@ -35,10 +35,15 @@
                     <input type="text" ng-model="name" placeholder="what's next?">
                 </form>
             </div>
-            <ul class="well list-unstyled">
-                <li ng-repeat="task in tasks">
-                    <input type="checkbox" ng-checked="checked()" ng-class="{'red-selected': task.selected}"> {{task.name}}
-                </li>
+
+            <div class="well list-unstyled" >
+                <div ng-repeat="task in tasks" ng-class="{taskselected:task.accomplished}">
+                    <input type="checkbox" ng-model="task.accomplished"> 
+                    {{task.name}}
+                </div>
+                </div>
+
+                
 
         </div>
 
