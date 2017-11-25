@@ -30,22 +30,29 @@
     <div class="container" ng-controller="todosCtrl">
         <div class="jumbotron ">
             <div class="text-center">
-                <h1>To do list application</h1>
+                <h1>Task list application</h1>
                 <form ng-submit="funcadd()">
                     <input type="text" ng-model="name" placeholder="what's next?">
                 </form>
             </div>
 
-            <div class="well list-unstyled" >
-                <div ng-repeat="task in tasks" ng-class="{taskselected:task.accomplished}">
-                    <input type="checkbox" ng-model="task.accomplished"> 
-                    {{task.name}}
-                </div>
-                </div>
+            <div class="well list-unstyled">
+                <div ng-repeat="task in tasks | filter : filterComplete " ng-class="{taskselected:task.accomplished}">
+                    <input type="checkbox" ng-model="task.accomplished" ng-click="mycounter(task)"> {{task.name}}
 
-                
+                </div>
+            </div>
+  
+
+
 
         </div>
+        <div>
+            {{counter}} items left
+                <button type="button" class="btn btn-default" ng-click="selecttask = 'complete'">completed</button>
+                <button type="button" class="btn btn-default" ng-click="selecttask = 'open'">open</button>
+                <button type="button" class="btn btn-default" ng-click="selecttask = ''">all</button>
+            </div>
 
     </div>
 </body>
