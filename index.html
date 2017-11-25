@@ -16,7 +16,9 @@
     <script src="app/model/tasks.js"></script>
     <script src="app/todosCtrl.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <!--
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       <!--
     <script src="app/gallery/carGalleryCtrl.js"></script>
     <script src="app/details/carDetailsCtrl.js"></script>
     <script src="app/nav/navDirective.js"></script>
@@ -36,11 +38,15 @@
                 </form>
             </div>
 
-            <div class="well list-unstyled">
-                <div ng-repeat="task in tasks | filter : filterComplete " ng-class="{taskselected:task.accomplished}">
-                    <input type="checkbox" ng-model="task.accomplished" ng-click="mycounter(task)"> {{task.name}}
 
-                </div>
+            <div class="column well list-unstyled tasks">
+                    <div ng-mouseover="task.show=true" ng-mouseleave="task.show=false" ng-repeat="task in tasks | filter : filterComplete " ng-class="{taskselected:task.accomplished}">
+                            
+                        <input  type="checkbox" ng-model="task.accomplished" ng-click="mycounter(task)">
+                        <button ng-click="deletetask(task)" ng-show="task.show"><i  class="material-icons">delete</i></button>
+                        {{task.name}}
+        
+                 </div>
             </div>
   
 

@@ -19,7 +19,16 @@ todosApp.controller("todosCtrl", function ($scope, Task, tasks, $log, $http, $lo
         }
  
     }
-    $scope.filterComplete = function (task) {
+
+    $scope.deletetask = function(task){
+        var taskIndex = $scope.tasks.indexOf(task);
+        if (!task.accomplishe){
+        alert("attention-not completed task!!")
+    }
+        $scope.tasks.splice(taskIndex, 1);
+    }
+
+       $scope.filterComplete = function (task) {
         if ($scope.selecttask == undefined || $scope.selecttask === "") {
             return true;
           } 
